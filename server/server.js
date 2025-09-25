@@ -14,4 +14,9 @@ const PORT = process.env.PORT || 5000;
 
 app.use("/api/v1/user", userRoute);
 
+
+//middlewares
+import { errorMiddleware } from "./middlewares/error.js";
+app.use(errorMiddleware);
+
 app.listen(PORT, () => console.log(`server is listing on port  ${PORT}`));
